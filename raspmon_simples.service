@@ -1,0 +1,10 @@
+[Unit]
+Description=Servico que abre o monitoramento no Raspberry
+
+[Service]
+ExecStart=/usr/bin/bash -c "cp /home/<user>/.Xauthority /root; export DISPLAY=:0; /usr/bin/python3 /home/<user>/raspmon.py"
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
